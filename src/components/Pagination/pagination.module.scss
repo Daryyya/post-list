@@ -1,4 +1,3 @@
-/* .item must be first */
 .item {
   align-items: center;
   color: var(--black);
@@ -30,14 +29,14 @@
 }
 
 .pagination {
+  position: fixed;
+  bottom: 0;
   align-items: center;
-  // background-color: #0fbcf9;
   display: flex;
   flex-direction: row;
   height: 60px;
   justify-content: center;
   list-style-type: none;
-  position: relative;
   width: 100%;
 }
 

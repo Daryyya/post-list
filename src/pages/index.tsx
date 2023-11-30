@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Pagination from "@/components/Pagination";
 import styles from "@/styles/Home.module.css";
 import Container from "@/ui/container";
+import Post from "@/components/Post";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -70,12 +70,7 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <Container>
           {currentItems.map((el) => (
-            <div key={el.id} className={`${styles.post}`}>
-              <Link href={`/${el.id}`} onClick={() => console.log("hello")}>
-                {el.title}
-              </Link>
-              <div>{el.body}</div>
-            </div>
+            <Post key={el.id} id={el.id} body={el.body} title={el.title}/>
           ))}
         </Container>
 
