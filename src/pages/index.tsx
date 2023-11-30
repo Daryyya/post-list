@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Pagination from "@/components/Pagination";
 import styles from "@/styles/Home.module.css";
+import Container from "@/ui/container";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +22,8 @@ export default function Home() {
   const filteredPosts = useMemo(() => {
     return posts.filter((el) =>
       el.title.trim().toLowerCase().includes(searchValue.trim().toLowerCase())
-    )
-  }, [posts, searchValue])
+    );
+  }, [posts, searchValue]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
@@ -67,19 +68,18 @@ export default function Home() {
         </form>
       </header>
       <main className={`${styles.main} ${inter.className}`}>
-        {currentItems.map((el) => (
-          <div key={el.id} className={`${styles.post}`}>
-            <Link href={`/${el.id}`} onClick={() => console.log("hello")}>
-              {el.title}
-            </Link>
-            <div>{el.body}</div>
-          </div>
-        ))}
+        <Container>
+          {currentItems.map((el) => (
+            <div key={el.id} className={`${styles.post}`}>
+              <Link href={`/${el.id}`} onClick={() => console.log("hello")}>
+                {el.title}
+              </Link>
+              <div>{el.body}</div>
+            </div>
+          ))}
+        </Container>
 
-        <Pagination
-          onPageChange={handlePageClick}
-          pageCount={pageCount}
-        />
+        <Pagination onPageChange={handlePageClick} pageCount={pageCount} />
       </main>
     </>
   );

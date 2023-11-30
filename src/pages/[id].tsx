@@ -1,3 +1,5 @@
+import Comments from "@/components/Comments";
+import Container from "@/ui/container";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -21,17 +23,13 @@ const Post = () => {
   }, [router.query.id]);
 
   return (
-    <>
+    <Container>
       <div>Post {router.query.id}</div>
       <h1>Комментарии</h1>
       {comments.map((el) => (
-        <div key={el.id}>
-          <h3>{el.name}</h3>
-          <p>{el.body}</p>
-          <p>{el.email}</p>
-        </div>
+        <Comments key={el.id} name={el.name} body={el.body} email={el.email}/>
       ))}
-    </>
+    </Container>
   );
 };
 
