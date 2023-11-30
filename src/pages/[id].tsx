@@ -24,9 +24,11 @@ const Post = () => {
 
   return (
     <Container>
-      <h1 style={{marginBottom: '20px'}}>Комментарии к посту {router.query.id}: </h1>
+      <h1 style={{ marginBottom: "20px" }}>
+        Комментарии к посту {router.query.id}:{" "}
+      </h1>
       {comments.map((el) => (
-        <Comments key={el.id} name={el.name} body={el.body} email={el.email}/>
+        <Comments key={el.id} name={el.name} body={el.body} email={el.email} />
       ))}
     </Container>
   );

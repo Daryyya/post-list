@@ -18,10 +18,10 @@
 }
 
 .input {
-position: absolute;
-bottom: 0;
-transform: translate(-50%, 50%);
-left: 50%;
-width: 500px;
-padding: 10px 12px;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  width: 500px;
+  padding: 10px 12px;
 }

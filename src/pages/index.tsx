@@ -41,7 +41,7 @@ export default function Home() {
   const pageCount = Math.ceil(filteredPosts.length / 10);
 
   const handlePageClick = useCallback(
-    (event: {selected: number}) => {
+    (event: { selected: number }) => {
       const newOffset = (event.selected * 10) % filteredPosts.length;
       setItemOffset(newOffset);
     },
@@ -70,7 +70,7 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <Container>
           {currentItems.map((el) => (
-            <Post key={el.id} id={el.id} body={el.body} title={el.title}/>
+            <Post key={el.id} id={el.id} body={el.body} title={el.title} />
           ))}
         </Container>
 

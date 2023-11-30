@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import React, { FC } from 'react'
-import styles from './post.module.scss'
+import Link from "next/link";
+import React, { FC } from "react";
+import styles from "./post.module.scss";
 
 interface PostProps {
   userId?: number;
@@ -9,15 +9,13 @@ interface PostProps {
   body: string;
 }
 
-const Post:FC<PostProps> = ({id, title, body}) => {
+const Post: FC<PostProps> = ({ id, title, body }) => {
   return (
     <div className={`${styles.post}`}>
-              <Link href={`/${id}`}>
-                {title}
-              </Link>
-              <div>{body}</div>
-            </div>
-  )
-}
+      <Link href={`/${id}`}>{title}</Link>
+      <div>{body}</div>
+    </div>
+  );
+};
 
-export default Post
+export default Post;
