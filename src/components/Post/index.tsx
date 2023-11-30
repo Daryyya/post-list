@@ -12,7 +12,7 @@ interface PostProps {
 const Post:FC<PostProps> = ({id, title, body}) => {
   return (
     <div className={`${styles.post}`}>
-              <Link href={`/${id}`} onClick={() => console.log("hello")}>
+              <Link href={`/${id}`}>
                 {title}
               </Link>
               <div>{body}</div>
