@@ -41,7 +41,7 @@ export default function Home() {
   const pageCount = Math.ceil(filteredPosts.length / 10);
 
   const handlePageClick = useCallback(
-    (event: any) => {
+    (event: {selected: number}) => {
       const newOffset = (event.selected * 10) % filteredPosts.length;
       setItemOffset(newOffset);
     },
